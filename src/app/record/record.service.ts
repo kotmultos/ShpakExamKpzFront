@@ -27,7 +27,7 @@ export class RecordService {
     return this.http.put(`https://localhost:44376/api/Records/update-record/${id}`, h);
   }
 
-  deletePatient(id : number) {
+  deleteRecord(id : number) {
     return this.http.delete(`https://localhost:44376/api/Records/delete-record/${id}`);
   }
 

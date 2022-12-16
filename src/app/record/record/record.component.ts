@@ -50,4 +50,13 @@ export class RecordComponent {
     this.isButtonClicked = false;
     this.GetAllRecords();
   }
+
+  update(r: Record) {
+    this.record = r;
+    this.isButtonClicked = true;
+  }
+
+  delete(r: Record) {
+    this.service.deleteRecord(r.id).subscribe(d => this.GetAllRecords());
+  }
 }

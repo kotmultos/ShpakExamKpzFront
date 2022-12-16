@@ -13,12 +13,12 @@
 
 <table>
   <tr>
-    <td>id</td>
-    <td>date</td>
-    <td>client name</td>
-    <td>type of work</td>
-    <td>master's name</td>
-    <td>UPDATE/DELETE</td>
+    <th>id</th>
+    <th>date</th>
+    <th>client name</th>
+    <th>type of work</th>
+    <th>master's name</th>
+    <th>UPDATE/DELETE</th>
   </tr>
   <tr *ngFor="let r of records">
     <td>{{r.id}}</td>
@@ -27,8 +27,8 @@
     <td>{{r.client.typeOfWork}}</td>
     <td>{{r.client.mastersName}}</td>
     <td>
-<!--      <td><button (click)="update(p)">update</button></td>-->
-<!--      <td><button (click)="delete(p)">delete</button></td>-->
+      <button (click)="update(r)">update</button>
+      <button (click)="delete(r)">delete</button>
     </td>
   </tr>
 </table>
