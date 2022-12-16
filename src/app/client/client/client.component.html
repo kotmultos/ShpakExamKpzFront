@@ -6,9 +6,9 @@
   <input [(ngModel)]="findWord" type="text" >
   <button (click)="find()">find</button>
 </div>
-
+<hr>
 <div>
-  <button (click)="add()">Manipulations</button>
+  <button (click)="add()">Add a client</button>
   <app-add-client [client]="client" *ngIf="isButtonClicked"></app-add-client>
   <button (click)="close()">close</button>
 </div>

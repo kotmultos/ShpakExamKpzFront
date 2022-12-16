@@ -17,6 +17,7 @@ export class RecordComponent {
   clients !: Client[]
   isButtonClicked !: boolean
   record !: Record
+  findWord !: string
 
   ngOnInit() {
     this.GetAllClients();
@@ -58,5 +59,13 @@ export class RecordComponent {
 
   delete(r: Record) {
     this.service.deleteRecord(r.id).subscribe(d => this.GetAllRecords());
+  }
+
+  find() {
+    if(this.findWord === "" || this.findWord === undefined) {
+      this.GetAllClients();
+    } else {
+      this.service.findRecordByName(this.findWord).subscribe(d => this.records = d);
+    }
   }
 }

@@ -1,15 +1,19 @@
 
 <h2>Records</h2>
-<button (click)="add()">Manipulations</button>
-<app-add-record [record]="record" [clients]="clients" *ngIf="isButtonClicked"></app-add-record>
-<button (click)="close()">close</button>
-<hr>
 
-<!--<div>-->
-<!--  <label>Find by name</label>-->
-<!--  <input [(ngModel)]="findWord" type="text" >-->
-<!--  <button (click)="find()">find</button>-->
-<!--</div>-->
+<div>
+  <label>Find by name</label>
+  <input [(ngModel)]="findWord" type="text" >
+  <button (click)="find()">find</button>
+</div>
+<hr>
+<div>
+  <button (click)="add()">Add a record</button>
+  <app-add-record [record]="record" [clients]="clients" *ngIf="isButtonClicked"></app-add-record>
+  <button (click)="close()">close</button>
+
+</div>
+
 
 <table>
   <tr>
