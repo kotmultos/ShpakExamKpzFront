@@ -19,11 +19,11 @@ export class ClientService {
   }
 
   updateClient(id : number, c : Client) {
-    return this.http.put(`https://localhost:44321/api/Patients/update-client/${id}`, c);
+    return this.http.put(`https://localhost:44376/api/Clients/update-client/${id}`, c);
   }
 
   deleteClient(id : number) {
-    return this.http.delete(`https://localhost:44321/api/Patients/delete-client/${id}`);
+    return this.http.delete(`https://localhost:44376/api/Clients/delete-client/${id}`);
   }
 
   // findPatientByName(name: string) : Observable<any[]> {

@@ -39,4 +39,13 @@ export class ClientComponent {
     this.isButtonClicked = false;
     this.GetAllClients();
   }
+
+  update(c: Client) {
+    this.client = c;
+    this.isButtonClicked = true;
+  }
+
+  delete(c: Client) {
+    this.service.deleteClient(c.id).subscribe(d => this.GetAllClients());
+  }
 }

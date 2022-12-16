@@ -17,7 +17,7 @@
     <td>id</td>
     <td>name</td>
     <td>type of work</td>
-    <td>ownerName</td>
+    <td>master's name</td>
     <td>UPDATE/DELETE</td>
   </tr>
   <tr *ngFor="let c of clients">
@@ -26,8 +26,8 @@
     <td>{{c.typeOfWork}}</td>
     <td>{{c.mastersName}}</td>
     <td>
-      <!--    <td><button (click)="update(p)">update</button></td>-->
-      <!--    <td><button (click)="delete(p)">delete</button></td>-->
+          <button (click)="update(c)">update</button>
+          <button (click)="delete(c)">delete</button>
     </td>
   </tr>
 </table>
