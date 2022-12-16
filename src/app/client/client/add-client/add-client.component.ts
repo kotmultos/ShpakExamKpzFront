@@ -37,6 +37,13 @@ export class AddClientComponent {
   }
 
   updateButtonClick() {
+    let c = {
+      id: this.id,
+      name: this.name,
+      typeOfWork: this.typeOfWork,
+      mastersName: this.mastersName
+    }
 
+    this.service.updateClient(c.id, c).subscribe();
   }
 }
