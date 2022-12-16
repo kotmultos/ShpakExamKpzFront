@@ -1,1 +1,16 @@
-<p>add-client works!</p>
+
+<div>
+  <label >name</label>
+  <input [(ngModel)]="name" type="text">
+
+  <label >Type of work</label>
+  <input [(ngModel)]="typeOfWork" type="text">
+
+  <label >master's name</label>
+  <input [(ngModel)]="mastersName" type="text">
+</div>
+
+<button (click)="addButtonClick()" *ngIf="client.id == 0">add</button>
+<button (click)="updateButtonClick()" *ngIf="client.id != 0">update</button>
+
+<hr>

@@ -1,1 +1,19 @@
-<p>add-record works!</p>
+
+<div>
+  <label >date</label>
+  <input [(ngModel)]="date" type="text">
+
+  <label >name</label>
+  <input [(ngModel)]="name" type="text">
+
+  <label >Type of work</label>
+  <input [(ngModel)]="typeOfWork" type="text">
+
+  <label >master's name</label>
+  <input [(ngModel)]="mastersName" type="text">
+</div>
+
+<button (click)="addButtonClick()" *ngIf="record.client.id == 0">add</button>
+<button (click)="updateButtonClick()" *ngIf="record.client.id != 0">update</button>
+
+<hr>

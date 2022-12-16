@@ -13,6 +13,8 @@ export class ClientComponent {
   }
 
   clients !: Client[]
+  isButtonClicked !: boolean
+  client !: Client
 
   ngOnInit() {
     this.GetAllClients();
@@ -20,5 +22,21 @@ export class ClientComponent {
 
   private GetAllClients() {
     this.service.getAllClients().subscribe(d => this.clients = d);
+  }
+
+  add() {
+    this.client = {
+      id: 0,
+      name: "",
+      typeOfWork: "",
+      mastersName: ""
+    }
+
+    this.isButtonClicked = true;
+  }
+
+  close() {
+    this.isButtonClicked = false;
+    this.GetAllClients();
   }
 }

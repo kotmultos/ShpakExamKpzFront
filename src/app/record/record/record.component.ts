@@ -14,6 +14,8 @@ export class RecordComponent {
   }
 
   records !: Record[]
+  isButtonClicked !: boolean
+  record !: Record
 
   ngOnInit() {
     this.GetAllRecords();
@@ -21,5 +23,25 @@ export class RecordComponent {
 
   private GetAllRecords() {
     this.service.getAllRecords().subscribe(d => this.records = d);
+  }
+
+  add() {
+    this.record = {
+      id: 0,
+      date: "",
+      client: {
+        id: 0,
+        name: "",
+        typeOfWork: "",
+        mastersName: ""
+      }
+    }
+
+    this.isButtonClicked = true;
+  }
+
+  close() {
+    this.isButtonClicked = false;
+    this.GetAllRecords();
   }
 }
