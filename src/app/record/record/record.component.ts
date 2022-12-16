@@ -63,7 +63,7 @@ export class RecordComponent {
 
   find() {
     if(this.findWord === "" || this.findWord === undefined) {
-      this.GetAllClients();
+      this.GetAllRecords();
     } else {
       this.service.findRecordByName(this.findWord).subscribe(d => this.records = d);
     }

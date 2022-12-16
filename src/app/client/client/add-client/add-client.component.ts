@@ -26,24 +26,32 @@ export class AddClientComponent {
   }
 
   addButtonClick() {
-    let c = {
-      id: this.id,
-      name: this.name,
-      typeOfWork: this.typeOfWork,
-      mastersName: this.mastersName
-    }
+    if (!(this.name === "" || this.typeOfWork == "" || this.mastersName == "")) {
+      let c = {
+        id: this.id,
+        name: this.name,
+        typeOfWork: this.typeOfWork,
+        mastersName: this.mastersName
+      }
 
-    this.service.addClient(c).subscribe();
+      this.service.addClient(c).subscribe();
+    } else {
+      alert("Fill the data to add a client");
+    }
   }
 
   updateButtonClick() {
-    let c = {
-      id: this.id,
-      name: this.name,
-      typeOfWork: this.typeOfWork,
-      mastersName: this.mastersName
-    }
+    if (!(this.name === "" || this.typeOfWork == "" || this.mastersName == "")) {
+      let c = {
+        id: this.id,
+        name: this.name,
+        typeOfWork: this.typeOfWork,
+        mastersName: this.mastersName
+      }
 
-    this.service.updateClient(c.id, c).subscribe();
+      this.service.updateClient(c.id, c).subscribe();
+    } else {
+      alert("Fill the data to update a client");
+    }
   }
 }

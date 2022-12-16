@@ -23,24 +23,31 @@ export class AddRecordComponent {
     this.id = this.record.id;
     this.time = this.record.date;
     this.clientId = this.record.client.id;
-
   }
 
   addButtonClick() {
-    let r = {
-      time: this.time,
-      desiredId: Number(this.clientId)
-    }
+    if(!(this.time == "" )) {
+      let r = {
+        time: this.time,
+        desiredId: Number(this.clientId)
+      }
 
-    this.service.addRecord(r).subscribe();
+      this.service.addRecord(r).subscribe();
+    } else {
+      alert("Fill the data to add a record");
+    }
   }
 
   updateButtonClick() {
-    let r = {
-      time: this.time,
-      desiredId: Number(this.clientId)
-    }
+    if(!(this.time == "" )) {
+      let r = {
+        time: this.time,
+        desiredId: Number(this.clientId)
+      }
 
-    this.service.updateRecord(this.id, r).subscribe();
+      this.service.updateRecord(this.id, r).subscribe();
+    } else {
+      alert("Fill the data to update a record");
+    }
   }
 }
