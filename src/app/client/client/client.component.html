@@ -1,1 +1,33 @@
-<p>client works!</p>
+
+<h2>Clients</h2>
+
+<!--<button (click)="addPatient()">Manipulations</button>-->
+<!--<app-add-patient [patient]="patient" *ngIf="isButtonClicked"></app-add-patient>-->
+<!--<button (click)="close()">close</button>-->
+<!--<hr>-->
+
+<!--<div>-->
+<!--  <label>Find by name</label>-->
+<!--  <input [(ngModel)]="findWord" type="text" >-->
+<!--  <button (click)="find()">find</button>-->
+<!--</div>-->
+
+<table>
+  <tr>
+    <td>id</td>
+    <td>name</td>
+    <td>type of work</td>
+    <td>ownerName</td>
+    <td>UPDATE/DELETE</td>
+  </tr>
+  <tr *ngFor="let c of clients">
+    <td>{{c.id}}</td>
+    <td>{{c.name}}</td>
+    <td>{{c.typeOfWork}}</td>
+    <td>{{c.mastersName}}</td>
+    <td>
+      <!--    <td><button (click)="update(p)">update</button></td>-->
+      <!--    <td><button (click)="delete(p)">delete</button></td>-->
+    </td>
+  </tr>
+</table>
