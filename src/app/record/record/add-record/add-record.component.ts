@@ -18,24 +18,18 @@ export class AddRecordComponent {
   id !:number;
   time !: string;
   clientId !: number
-  // name !: string;
-  // typeOfWork !: string;
-  // mastersName !: string;
 
   ngOnInit() {
     this.id = this.record.id;
     this.time = this.record.date;
     this.clientId = this.record.client.id;
-    // this.name = this.record.client.name;
-    // this.typeOfWork = this.record.client.typeOfWork;
-    // this.mastersName = this.record.client.mastersName;
+
   }
 
   addButtonClick() {
     let r = {
-      id: this.id,
       time: this.time,
-      desiredId: this.clientId
+      desiredId: Number(this.clientId)
     }
 
     this.service.addRecord(r).subscribe();
