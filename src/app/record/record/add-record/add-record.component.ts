@@ -36,6 +36,11 @@ export class AddRecordComponent {
   }
 
   updateButtonClick() {
+    let r = {
+      time: this.time,
+      desiredId: Number(this.clientId)
+    }
 
+    this.service.updateRecord(this.id, r).subscribe();
   }
 }
