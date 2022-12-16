@@ -1,7 +1,7 @@
 
 <h2>Records</h2>
 <button (click)="add()">Manipulations</button>
-<app-add-record [record]="record" *ngIf="isButtonClicked"></app-add-record>
+<app-add-record [record]="record" [clients]="clients" *ngIf="isButtonClicked"></app-add-record>
 <button (click)="close()">close</button>
 <hr>
 

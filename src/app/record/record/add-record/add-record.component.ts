@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {RecordService} from "../../record.service";
 import {Record} from "../../record";
+import {Client} from "../../../client/client";
 
 @Component({
   selector: 'app-add-record',
@@ -12,31 +13,29 @@ export class AddRecordComponent {
   }
 
   @Input() record !: Record
+  @Input() clients !: Client[]
 
   id !:number;
-  date !: string;
-  name !: string;
-  typeOfWork !: string;
-  mastersName !: string;
+  time !: string;
+  clientId !: number
+  // name !: string;
+  // typeOfWork !: string;
+  // mastersName !: string;
 
   ngOnInit() {
     this.id = this.record.id;
-    this.date = this.record.date;
-    this.name = this.record.client.name;
-    this.typeOfWork = this.record.client.typeOfWork;
-    this.mastersName = this.record.client.mastersName;
+    this.time = this.record.date;
+    this.clientId = this.record.client.id;
+    // this.name = this.record.client.name;
+    // this.typeOfWork = this.record.client.typeOfWork;
+    // this.mastersName = this.record.client.mastersName;
   }
 
   addButtonClick() {
     let r = {
       id: this.id,
-      date: this.date,
-      client: {
-        id: 0,
-        name: this.name,
-        typeOfWork: this.typeOfWork,
-        mastersName: this.mastersName
-      }
+      time: this.time,
+      desiredId: this.clientId
     }
 
     this.service.addRecord(r).subscribe();
