@@ -26,7 +26,7 @@ export class ClientService {
     return this.http.delete(`https://localhost:44376/api/Clients/delete-client/${id}`);
   }
 
-  // findPatientByName(name: string) : Observable<any[]> {
-  //   return this.http.get<any[]>(`https://localhost:44321/api/Patients/find-patient-by-name/${name}`);
-  // }
+  findClientByName(name: string) : Observable<Client[]> {
+    return this.http.get<any[]>(`https://localhost:44376/api/Clients/find-clients-by-name/${name}`);
+  }
 }

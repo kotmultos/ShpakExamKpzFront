@@ -15,6 +15,7 @@ export class ClientComponent {
   clients !: Client[]
   isButtonClicked !: boolean
   client !: Client
+  findWord !: string
 
   ngOnInit() {
     this.GetAllClients();
@@ -47,5 +48,13 @@ export class ClientComponent {
 
   delete(c: Client) {
     this.service.deleteClient(c.id).subscribe(d => this.GetAllClients());
+  }
+
+  find() {
+    if(this.findWord === "" || this.findWord === undefined) {
+      this.GetAllClients();
+    } else {
+      this.service.findClientByName(this.findWord).subscribe(d => this.clients = d);
+    }
   }
 }

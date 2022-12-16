@@ -1,16 +1,17 @@
 
 <h2>Clients</h2>
 
-<button (click)="add()">Manipulations</button>
-<app-add-client [client]="client" *ngIf="isButtonClicked"></app-add-client>
-<button (click)="close()">close</button>
-<hr>
+<div>
+  <label>Find by name</label>
+  <input [(ngModel)]="findWord" type="text" >
+  <button (click)="find()">find</button>
+</div>
 
-<!--<div>-->
-<!--  <label>Find by name</label>-->
-<!--  <input [(ngModel)]="findWord" type="text" >-->
-<!--  <button (click)="find()">find</button>-->
-<!--</div>-->
+<div>
+  <button (click)="add()">Manipulations</button>
+  <app-add-client [client]="client" *ngIf="isButtonClicked"></app-add-client>
+  <button (click)="close()">close</button>
+</div>
 
 <table>
   <tr>
