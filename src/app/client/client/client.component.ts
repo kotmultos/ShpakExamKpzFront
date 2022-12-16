@@ -50,7 +50,7 @@ export class ClientComponent {
     this.service.deleteClient(c.id).subscribe(d => this.GetAllClients());
   }
 
-  find() {
+  findByWord() {
     if(this.findWord === "" || this.findWord === undefined) {
       this.GetAllClients();
     } else {
