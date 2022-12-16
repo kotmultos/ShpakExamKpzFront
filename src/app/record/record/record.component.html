@@ -6,14 +6,12 @@
   <p>You can search clients by their name or by name of the master</p>
   <input [(ngModel)]="findWord" type="text" >
   <button (click)="find()">find</button>
+
+  <button (click)="add()" *ngIf="!isButtonClicked">Add a record</button>
+  <button (click)="close()" *ngIf="isButtonClicked">close</button>
 </div>
 <hr>
-<div>
-  <button (click)="add()" *ngIf="!isButtonClicked">Add a record</button>
-  <app-add-record [record]="record" [clients]="clients" *ngIf="isButtonClicked"></app-add-record>
-  <button (click)="close()" *ngIf="isButtonClicked">close</button>
-
-</div>
+<app-add-record [record]="record" [clients]="clients" *ngIf="isButtonClicked"></app-add-record>
 
 <h3>All records</h3>
 

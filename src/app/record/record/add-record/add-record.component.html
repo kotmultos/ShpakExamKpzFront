@@ -1,16 +1,21 @@
 
-<div>
-  <p>Add record</p>
-  <label >date</label>
-  <input [(ngModel)]="time" type="text">
+<div class="flex">
+  <div class="flex">
+    <label class="block">date</label>
+    <input class="block" [(ngModel)]="time" type="text">
+  </div>
 
-  <label >Client</label>
-  <select [(ngModel)]="clientId" >
-    <option *ngFor="let c of clients" value="{{c.id}}">{{c.id}} | {{c.name}} | {{c.typeOfWork}} | {{c.mastersName}}</option>
-  </select>
+  <div class="flex">
+    <label class="block">Client</label>
+    <select class="block" [(ngModel)]="clientId" >
+      <option *ngFor="let c of clients" value="{{c.id}}">{{c.id}} | {{c.name}} | {{c.typeOfWork}} | {{c.mastersName}}</option>
+    </select>
+  </div>
 
+  <button (click)="addButtonClick()" *ngIf="record.id == 0">add</button>
+  <button (click)="updateButtonClick()" *ngIf="record.id != 0">update</button>
 </div>
 
-<button (click)="addButtonClick()" *ngIf="record.id == 0">add</button>
-<button (click)="updateButtonClick()" *ngIf="record.id != 0">update</button>
+<hr>
+
 

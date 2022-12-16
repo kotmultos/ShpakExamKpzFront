@@ -1,16 +1,22 @@
 
-<div>
-  <label >name</label>
-  <input [(ngModel)]="name" type="text">
+<div class="flex">
+  <div class="flex">
+    <label class="block">name</label>
+    <input class="block" [(ngModel)]="name" type="text">
+  </div>
 
-  <label >Type of work</label>
-  <input [(ngModel)]="typeOfWork" type="text">
+  <div class="flex">
+    <label class="block">Type of work</label>
+    <input class="block" [(ngModel)]="typeOfWork" type="text">
+  </div>
 
-  <label >master's name</label>
-  <input [(ngModel)]="mastersName" type="text">
+  <div class="flex">
+     <label class="block">master's name</label>
+     <input class="block" [(ngModel)]="mastersName" type="text">
+   </div>
+
+  <button (click)="addButtonClick()" *ngIf="client.id == 0">add</button>
+  <button (click)="updateButtonClick()" *ngIf="client.id != 0">update</button>
 </div>
-
-<button (click)="addButtonClick()" *ngIf="client.id == 0">add</button>
-<button (click)="updateButtonClick()" *ngIf="client.id != 0">update</button>
 
 <hr>

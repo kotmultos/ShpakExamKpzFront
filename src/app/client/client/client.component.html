@@ -6,13 +6,13 @@
   <p>You can search clients by their name or by name of the master</p>
   <input [(ngModel)]="findWord" type="text" >
   <button (click)="find()">find</button>
-</div>
-<hr>
-<div>
+
   <button (click)="add()" *ngIf="!isButtonClicked">Add a client</button>
-  <app-add-client [client]="client" *ngIf="isButtonClicked"></app-add-client>
   <button (click)="close()" *ngIf="isButtonClicked">close</button>
 </div>
+<hr>
+
+<app-add-client [client]="client" *ngIf="isButtonClicked"></app-add-client>
 
 <h3>All clients</h3>
 
